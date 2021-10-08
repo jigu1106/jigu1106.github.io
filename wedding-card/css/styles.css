@@ -23,7 +23,12 @@ body {
     text-align: center;
     word-break: keep-all;
     color: var(--gray);
+    min-width: 350px;
+}
+@media (min-width: 280px), (max-width: 319px) screen and (orientation: portrait) {
+  body {
     min-width: 280px;
+  }
 }
 
 a:link {
@@ -110,13 +115,12 @@ a:active {
 
 @media (min-width: 280px), (max-width: 319px) screen and (orientation: portrait) {
   .section-d-day .d-calendar .row .col {
-      padding-left: 0px;
-      padding-right: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
   }
 }
-
 
 #d-day-holder {
     font-size: 2em;
