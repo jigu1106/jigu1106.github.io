@@ -24,7 +24,7 @@ setScreenSize();
 // 디데이
 var dDayholder = document.getElementById('d-day-holder')
 var dDayWrapper = document.createElement('div')
-var remainDays = Math.max(0, Math.ceil((new Date().getTime() - new Date("2021-11-06T00:00:00").getTime()) / (1000 * 60 * 60 * 24)));
+var remainDays = Math.max(0, Math.ceil((new Date().getTime() - new Date("2021-11-06T00:00:00").getTime()) / (1000 * 60 * 60 * 24)) - 1);
 dDayWrapper.innerHTML = '<div>' + remainDays + '일</div>';
 dDayholder.append(dDayWrapper)
 
