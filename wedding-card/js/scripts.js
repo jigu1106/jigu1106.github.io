@@ -1,23 +1,13 @@
-const useGoogleDrive = true;
 const albumImgCount = 30;
+const image_path = "https://jigu1106.com/";
 
 // 대문
-if (useGoogleDrive) {
-    document.getElementById('main-img-holder').src = "https://drive.google.com/uc?export=view&id=1WltxsneeJZrhmypsAoJ6u0GKikUuE4jw";
-} else {
-    document.getElementById('main-img-holder').src = "./images/main.jpg";
-}
+document.getElementById('main-img-holder').src = get_image("main.jpg");
 
 // 만든이
-if (useGoogleDrive) {
-    document.getElementById('creator-mingu').src = "https://drive.google.com/uc?export=view&id=12loMwwH9Jnu5ryzQCZLKlz6Ern_VB8FN";
-    document.getElementById('creator-jihye').src = "https://drive.google.com/uc?export=view&id=1dglIcNFlg1hgp4RS-sZDSCd94RZADRwY";
-    document.getElementById('creator-bbiyong').src = "https://drive.google.com/uc?export=view&id=14dJZW-FoaigCQVsH3Ij8GUEbqmA_wgRR";
-} else {
-    document.getElementById('creator-mingu').src = "./images/creator/1.jpg";
-    document.getElementById('creator-jihye').src = "./images/creator/2.jpg";
-    document.getElementById('creator-bbiyong').src = "./images/creator/3.jpg";
-}
+document.getElementById('creator-mingu').src = get_image("creator/1.jpg");
+document.getElementById('creator-jihye').src = get_image("creator/2.jpg");
+document.getElementById('creator-bbiyong').src = get_image("creator/3.jpg");
 
 setScreenSize();
 
@@ -233,87 +223,25 @@ function setScreenSize() {
 }
 
 function thumbImgLinks() {
-    var thumbImgs = {};
+    var thumbImgs = [];
 
-    if (useGoogleDrive) {
-        thumbImgs['1'] = 'https://drive.google.com/uc?export=view&id=1aJPn7D4MdpJO0BjdQC4XTEUO6qrI2rN_';
-        thumbImgs['2'] = 'https://drive.google.com/uc?export=view&id=1oDYyA78pvc-0xmbPoCx-Ym0RU8cVmKCq';
-        thumbImgs['3'] = 'https://drive.google.com/uc?export=view&id=1w-PnaNpSaNb-NaGMA9c8e8GiNVma-rP1';
-        thumbImgs['4'] = 'https://drive.google.com/uc?export=view&id=1JJKTG8mpqP8UAXkK9CKjvKAP0X4eyoDb';
-        thumbImgs['5'] = 'https://drive.google.com/uc?export=view&id=1pgkIulSv7RKQMzv7NOkbaKO5Nih_vuGA';
-        thumbImgs['6'] = 'https://drive.google.com/uc?export=view&id=18swtbfEwshhFyFvCMi7gpzNQv64as5Oe';
-        thumbImgs['7'] = 'https://drive.google.com/uc?export=view&id=175hjRupDIKhDZHWff4ZVeAewAXNiN1Tb';
-        thumbImgs['8'] = 'https://drive.google.com/uc?export=view&id=1Hna8NAKA3n7_CYJdXiLxRAST2j1McMZg';
-        thumbImgs['9'] = 'https://drive.google.com/uc?export=view&id=1tnPLajB1Jht1w7M8crLWGf2cuWhyFEJY';
-        thumbImgs['10'] = 'https://drive.google.com/uc?export=view&id=1jLwTqFagBe-oNSnQCVTBz7KgXDzsGRjh';
-        thumbImgs['11'] = 'https://drive.google.com/uc?export=view&id=1-SiZ9Ou0kG2WXzEJipm_DW-9Awao63-G';
-        thumbImgs['12'] = 'https://drive.google.com/uc?export=view&id=1n6eJm0AVjj6t7gtzJtbhUnE8g_RzzxVW';
-        thumbImgs['13'] = 'https://drive.google.com/uc?export=view&id=1jhEKQadSd5Uy9d3P-ncNnPzZvxHRXVLO';
-        thumbImgs['14'] = 'https://drive.google.com/uc?export=view&id=16gr6-hCe5ieZ87EuuglNhlQvaiepX-Jk';
-        thumbImgs['15'] = 'https://drive.google.com/uc?export=view&id=1S54z2NnhWqBRHmGyBpyZGmXRgnBM0oOV';
-        thumbImgs['16'] = 'https://drive.google.com/uc?export=view&id=1WRBLiUBcQanDuLumk-gA3zCwJmFcGBTq';
-        thumbImgs['17'] = 'https://drive.google.com/uc?export=view&id=1HHnV0C1rw9hOn1t2Ls0xEaM32M_xF2pY';
-        thumbImgs['18'] = 'https://drive.google.com/uc?export=view&id=16-zqdFPw_zqhzI8r8UzOrngFhhhLJBo9';
-        thumbImgs['19'] = 'https://drive.google.com/uc?export=view&id=1UUeCZcjiaTBTeWVR_2RoNlpsou3olZAL';
-        thumbImgs['20'] = 'https://drive.google.com/uc?export=view&id=1vcBKaVAcmOQcoiPu-kD_6W4nptgBgk8Y';
-        thumbImgs['21'] = 'https://drive.google.com/uc?export=view&id=1SCkZOA97QxFfS2ZHN0mIPKw--cGvCMTL';
-        thumbImgs['22'] = 'https://drive.google.com/uc?export=view&id=1cm5YGYeWqnDdEM6f9jVbpejZgvVUlUOv';
-        thumbImgs['23'] = 'https://drive.google.com/uc?export=view&id=1ihZP6f0DNglelNQCPpdlIuW4o2TtEAVL';
-        thumbImgs['24'] = 'https://drive.google.com/uc?export=view&id=1uuVuvFfaWHoMgVAGL_PdkhgrnrhiXql_';
-        thumbImgs['25'] = 'https://drive.google.com/uc?export=view&id=1fRRkCD3sTYkFGnHaxijrfc6ETMWWawNY';
-        thumbImgs['26'] = 'https://drive.google.com/uc?export=view&id=1bs5ZTLVETAGoVdWohFcdtUryMi6s5Ltw';
-        thumbImgs['27'] = 'https://drive.google.com/uc?export=view&id=14zmnuGDGDAvSSVL6HoaAOxQ6pwz1OK0M';
-        thumbImgs['28'] = 'https://drive.google.com/uc?export=view&id=1Is2gWfmRPO2IVcwBeOKbmuKVUkZqZPRz';
-        thumbImgs['29'] = 'https://drive.google.com/uc?export=view&id=10Wk5m_bB_4juzA0BUgo9_IvDqCZkKBaw';
-        thumbImgs['30'] = 'https://drive.google.com/uc?export=view&id=1CesUs_Qr9nDVEOU8VnyocP5-MysNTU-N';
-    } else {
-        for (var i = 0; i < albumImgCount; i++) {
-            thumbImgs[i] = `images/album/thumbnail/${i+1}.jpg`;
-        }
+    for (var i = 0; i < albumImgCount; i++) {
+        thumbImgs[i] = get_image("album/thumbnail/" + i + ".jpg");
     }
 
     return thumbImgs;
 }
 
 function modalImgLinks() {
-    var modalImgs = {};
+    var modalImgs = [];
 
-    if (useGoogleDrive) {
-        modalImgs['1'] = 'https://drive.google.com/uc?export=view&id=1vUqskPYE3AFeGB-jAvvA5NaZ3Clo5QuF';
-        modalImgs['2'] = 'https://drive.google.com/uc?export=view&id=1Pv41LeBxI8q1QcsaCpCSl3euVcZetZdM';
-        modalImgs['3'] = 'https://drive.google.com/uc?export=view&id=1sh7DTfEh1WgZCdMV3v6RCxWO3PhTC4Lm';
-        modalImgs['4'] = 'https://drive.google.com/uc?export=view&id=11aWHJCPD7wHv-WWWZ1F45PNpRbq3UCQT';
-        modalImgs['5'] = 'https://drive.google.com/uc?export=view&id=146dgTlkO00WDmZ_PEx6y9zUZPGioimY4';
-        modalImgs['6'] = 'https://drive.google.com/uc?export=view&id=1YdJ5VUmUVi-OwUTMxXEdH_Rr4sYG36vF';
-        modalImgs['7'] = 'https://drive.google.com/uc?export=view&id=1QdBay5SqSMFvGs22wEgHK1f-KTDC4NJS';
-        modalImgs['8'] = 'https://drive.google.com/uc?export=view&id=1sjTE0TqE8vWtgdBcM6Du3YGRUgNFaXBq';
-        modalImgs['9'] = 'https://drive.google.com/uc?export=view&id=1Cyl17ibea5dqzD_Ytz29KM0BMosJ0aUY';
-        modalImgs['10'] = 'https://drive.google.com/uc?export=view&id=12l57wSr1T-QMW-kkx0K0TCLS0Ja3fCAe';
-        modalImgs['11'] = 'https://drive.google.com/uc?export=view&id=1Sg0apBhtL3slIcHmx2ZhZ9JXAnhb-vmS';
-        modalImgs['12'] = 'https://drive.google.com/uc?export=view&id=1LLWPqJxsJS0mdOmJ2PjyLbjmwoaTSDfh';
-        modalImgs['13'] = 'https://drive.google.com/uc?export=view&id=1Lg1LIziaYhu0OXClEOWXgNTvn-dPKaLJ';
-        modalImgs['14'] = 'https://drive.google.com/uc?export=view&id=11n27vFGBGo72c_Cdm2P1nNiWX6fWfh7I';
-        modalImgs['15'] = 'https://drive.google.com/uc?export=view&id=1RT4R6oG4nU6f0_8db7r1e4V0cD2HN6Qj';
-        modalImgs['16'] = 'https://drive.google.com/uc?export=view&id=1S4C7bnbp0nSl7GGWRph1G1tis9X3k2BV';
-        modalImgs['17'] = 'https://drive.google.com/uc?export=view&id=1uXXVcCdYAXFYexAj6BydsyD1kXpukUYc';
-        modalImgs['18'] = 'https://drive.google.com/uc?export=view&id=1mFf6zS86tMCcDpHxmYQ9_9fD1DoCqYBG';
-        modalImgs['19'] = 'https://drive.google.com/uc?export=view&id=1e71Ep85GuUeiWnTidL3T1NtgzeCA3cjK';
-        modalImgs['20'] = 'https://drive.google.com/uc?export=view&id=1tTbfO5uXxmJR2ycHwDmG5EjZPdy9Hj_T';
-        modalImgs['21'] = 'https://drive.google.com/uc?export=view&id=1mAJiD5KbD0vpjKq09eB4Hhit7SzEf-5p';
-        modalImgs['22'] = 'https://drive.google.com/uc?export=view&id=1jOG18_eAou7irrio084YRkbQQMJwPac9';
-        modalImgs['23'] = 'https://drive.google.com/uc?export=view&id=17ebGp2tdpMQ57i_Igy-VdXiWR7Yp-Lt4';
-        modalImgs['24'] = 'https://drive.google.com/uc?export=view&id=1OoCw2VK2QhUlcnN3tgqunF-SEubKf_kJ';
-        modalImgs['25'] = 'https://drive.google.com/uc?export=view&id=1GrHCZsWJfggqQffEKbgVNgNIyzCteZun';
-        modalImgs['26'] = 'https://drive.google.com/uc?export=view&id=1git1quObaeN2CjHv8qGMpo3ElXRD0Q2T';
-        modalImgs['27'] = 'https://drive.google.com/uc?export=view&id=1-q281KO3QyeWr6qDu5QXF5P2KhAsevyl';
-        modalImgs['28'] = 'https://drive.google.com/uc?export=view&id=1iUmeGB8SS8byDBMY8GQMD9ZgzkpXh1U4';
-        modalImgs['29'] = 'https://drive.google.com/uc?export=view&id=1ZPnLiKTVXQb1ndS9Pwwtj_IiBb2r8Rbj';
-        modalImgs['30'] = 'https://drive.google.com/uc?export=view&id=1vDi3NxvIcqhDONSqGIjiasv5bJR_MiHc';
-    } else {
-        for (var i = 0; i < albumImgCount; i++) {
-            thumbImgs[i] = `images/album/${i+1}.jpg`;
-        }
+    for (var i = 0; i < albumImgCount; i++) {
+        modalImgs[i] = get_image("album/" + i + ".jpg");
     }
 
     return modalImgs;
+}
+
+function get_image(file_name) {
+    return image_path + file_name;
 }
