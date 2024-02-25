@@ -28,7 +28,7 @@ for (var i = 0; i < 9; i++) {
     dAlbumHolder.innerHTML += `        
     <a class="col-sm-4 col-4 p-0" data-bs-toggle="modal" data-bs-target="#modal-album" data-bs-slide-to="${i}">
         <div class="square">
-            <img class="thumbnail lazy wow fadeIn" data-src="${thumbImgs[i+1]}" alt="">
+            <img class="thumbnail lazy wow fadeIn" data-src="${thumbImgs[i]}" alt="">
         </div>
     </a>
     `;
@@ -42,7 +42,7 @@ function moreAlbumImg() {
         dAlbumHolder.innerHTML += `        
         <a class="col-sm-4 col-4 p-0" data-bs-toggle="modal" data-bs-target="#modal-album" data-bs-slide-to="${i}">
             <div class="square">
-                <img class="thumbnail wow fadeIn" src="${thumbImgs[i+1]}" alt="">
+                <img class="thumbnail wow fadeIn" src="${thumbImgs[i]}" alt="">
             </div>
         </a>
         `;
@@ -57,7 +57,7 @@ for (var i = 0; i < albumImgCount; i++) {
 
     dModalHolder.innerHTML += `        
     <div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-dismiss="modal">
-        <img class="modal-img lazy" data-src="${modalImgs[i+1]}" id="modal-img-${i+1}">
+        <img class="modal-img lazy" data-src="${modalImgs[i]}" id="modal-img-${i+1}">
     </div>
     `;
 }
@@ -226,7 +226,7 @@ function thumbImgLinks() {
     var thumbImgs = [];
 
     for (var i = 0; i < albumImgCount; i++) {
-        thumbImgs[i] = get_image("album/thumbnail/" + i + ".jpg");
+        thumbImgs[i] = get_image("album/thumbnail/" + (i+1) + ".jpg");
     }
 
     return thumbImgs;
@@ -236,7 +236,7 @@ function modalImgLinks() {
     var modalImgs = [];
 
     for (var i = 0; i < albumImgCount; i++) {
-        modalImgs[i] = get_image("album/" + i + ".jpg");
+        modalImgs[i] = get_image("album/" + (i+1) + ".jpg");
     }
 
     return modalImgs;
